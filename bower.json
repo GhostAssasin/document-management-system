@@ -1,0 +1,12 @@
+{
+  "name": "document-managment-system",
+  "description": "Project for AngularJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/GhostAssasin/document-management-system",
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.x"
+  }
+}
+
