@@ -1,10 +1,129 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-    AAS<h1>DDDasssAAAssdd</h1>
-</body>
-</html>
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<title>Admin Panel</title>
+	<meta name="viewport" content="width=device-width, initial-scale: 1.0, user-scalabe=0">
+
+	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bower_components/angular-material/angular-material.css" rel="stylesheet"/>
+
+	<link href="css/template.css" rel="stylesheet">
+    <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/sidebar.workspace.css" rel="stylesheet">
+    <link href="css/panel.css" rel="stylesheet">
+    <link href="css/table.css" rel="stylesheet">
+    <link href="css/buttons.css" rel="stylesheet">
+    <link href="css/frame.css" rel="stylesheet">
+    <link href="css/input.css" rel="stylesheet">
+    <link href="css/select.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <link href="css/alert.css" rel="stylesheet">
+    <link href="css/radio.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
+    <link href="css/animate.slide.css" rel="stylesheet">
+    <link href="css/show.hide.css" rel="stylesheet">
+    <link href="css/chart.css" rel="stylesheet">
+    <link href="css/editor.css" rel="stylesheet">
+
+
+    <!-- <link href="css/workspace.css" rel="stylesheet"> -->
+
+
+    <link href="bower_components/ng-dialog/css/ngDialog.css" rel="stylesheet">
+    <link href="bower_components/ng-dialog/css/ngDialog-theme-default.css" rel="stylesheet">
+    <link href="css/ngdialog.custom.css" rel="stylesheet">
+
+    <link href="bower_components/summernote/dist/summernote.css" rel="stylesheet" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+
+    <body ng-controller="MainCtrl">
+
+
+        <div ui-view></div>
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/summernote/dist/summernote.js"></script>
+
+        <script src="bower_components/angular/angular.js"></script>
+				<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
+				<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+				<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+				<script src="bower_components/angular-material/angular-material.min.js"></script>
+
+
+
+        <script src="bower_components/angular-summernote/dist/angular-summernote.min.js"></script>
+
+
+        <script type="text/javascript" src="bower_components/ace-builds/src-min-noconflict/ace.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui-ace/ui-ace.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-translate/angular-translate.js"></script>
+        <script type="text/javascript" src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+        <script src="bower_components/Chart.js/Chart.js"></script>
+        <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+
+        <script src="bower_components/angular-translate/angular-translate.js"></script>
+        <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+
+        <script src="bower_components/ng-dialog/js/ngDialog.js"></script>
+
+        <script src="bower_components/momentjs/min/moment.min.js"></script>
+        <script src="bower_components/momentjs/min/locales.min.js"></script>
+        <script src="bower_components/humanize-duration/humanize-duration.js"></script>
+        <script src="bower_components/angular-timer/dist/angular-timer.min.js"></script>
+
+
+        <script src="main/main.js"></script>
+
+        <script src="main/main.controller.js"></script>
+
+        <script src="modules/login/login.controller.js"></script>
+        <script src="modules/login/authentication.service.js"></script>
+
+        <script src="modules/user/user.controller.js"></script>
+        <script src="modules/user/user.service.js"></script>
+
+
+        <script src="modules/table/table.controller.js"></script>
+        <script src="modules/table/table.directive.js"></script>
+
+        <script src="modules/participant/participant.service.js"></script>
+
+        <script src="modules/dashboard/dashboard.controller.js"></script>
+
+
+        <script src="modules/translate/translate.controller.js"></script>
+        <script src="modules/translate/translaste.directive.js"></script>
+
+        <script src="modules/profile/profile.controller.js"></script>
+        <script src="modules/profile/components/activity.controller.js"></script>
+
+        <script src="modules/analytics/analytics.controller.js"></script>
+
+        <script src="modules/panel/panel.controller.js"></script>
+        <script src="modules/panel/panel.directive.js"></script>
+
+				<script src="modules/dialog/schedule-dialog.controller.js"></script>
+				<script src="bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.min.js"></script>
+
+        <script src="modules/workspace/workspace.controller.js"></script>
+
+
+
+        <script src="modules/teachers/table.teachers.template.html"></script>
+        <script src="modules/teachers/teachers.controller.js"></script>
+        <script src="modules/teachers/tableWithTeachers.ditective.js"></script>
+        <script src="modules/teachers/teachers.service.js"></script>
+        <script src="modules/teachers/buffer.service.js"></script>
+        <script src="modules/teachers/responseBeforDelete.template.html"></script>
+
+    </body>
+    </html>

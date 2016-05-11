@@ -1,0 +1,27 @@
+<div id="wrapper">
+  <div id="sidebarToggle" class="sidebar-wrapper">
+      <button id="sidebar" ng-click="sidebarToggle(sidebarToggle)"></button>
+      <div class="user-info-admin" style="background-image: url(/dist/images/profiles/default.jpg">
+        <center>
+          <img src="dist/images/profiles/{{user.image}}" onerror="this.src='dist/images/profiles/error.png'">
+          <div class="title">{{user.firstName}} {{user.lastName}}</div>
+          <div class="role" translate>{{user.role}}</div> <!-- does not work translate, fix it-->
+        </center>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a id="dashboard" href="#/dashboard">DASHBOARD</a></li>
+        <li><a id="participants" href="#/users">USERS</a></li>
+        <li><a id="statistics" href="#/analytics" translate>ANALYTICS</a></li>
+        <li><a id="tasks" href="#/tasks" translate>TASKS</a></li>
+      </ul>
+      <translate-button></translate-button>
+      <div class="logout-admin"><button class="logout" ng-click="logOut()" translate>LOGOUT</button></div>
+  </div>
+  <div id="page-content-wrapper">
+    <div class="page-content">
+      <div class="container-fluid">
+          <div id="adminView" ui-view></div>
+      </div>
+    </div>
+  </div>
+</div>

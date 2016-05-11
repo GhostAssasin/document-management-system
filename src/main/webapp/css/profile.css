@@ -1,0 +1,109 @@
+.profile img.bg {
+	width: 100%;
+}
+
+.profile div.title {
+	display: block;
+	padding: 0;
+	position: absolute;
+	padding: 25px;
+	margin-top: -175px;
+	width: 100%;
+}
+
+.profile img.avatar {
+	width: 125px;
+	border-radius: 5px;
+}
+
+.profile .name {
+	font-size: 17px;
+	font-weight: bold;
+	color: #fff;
+	margin-top: 0;
+}
+
+.profile .sub {
+	font-size: 13px;
+	color: #fff;
+}
+
+.profile table {
+	position: absolute;
+}
+
+.profile td.title {
+	padding: 15px;
+	width: auto;
+}
+
+.profile td.image {
+	width: 125px;
+}
+
+@media(max-width: 414px) {
+  .profile td.image {
+		display: none;
+	}
+}
+
+@media(min-width: 414px) {
+  .profile td.image {
+		display: table-cell;
+	}
+}
+
+.profile td.button {
+	width: 50px;
+	padding: 0;
+	padding-right: 10px;
+}
+
+.profile td.button button{
+	margin: 0;
+}
+
+.bottom {
+	margin-top: 85px;
+	margin-right: 15px;
+	width: auto;
+}
+
+.profile .change-background {
+	position: absolute;
+	margin: 0;
+	width: 96.8%;
+	padding: 10px;
+}
+
+.profile .change-background button{
+	background: rgba(34, 34, 34, 0.5);
+	color: #eee;
+	float: right;
+}
+
+.profile .change-background button:hover{
+	background: rgba(34, 34, 34, 0.8);
+	color: #fff;
+}
+
+.profile .change-avatar {
+	position: absolute;
+	margin: 0;
+	background: rgba(1, 1, 1, 0.5);
+	width: 125px;
+	bottom: 0;
+	padding-bottom: 10px;
+	border-radius: 0 0 4px 4px;
+}
+
+.profile .change-avatar button {
+	width: 100%;
+	margin: 0;
+	background: transparent;
+	color: silver;
+}
+
+.profile .change-avatar button:hover, .profile .change-avatar button:focus {
+	color: #fff;
+}

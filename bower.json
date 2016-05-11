@@ -6,7 +6,11 @@
   "license": "GNU GENERAL PUBLIC LICENSE",
   "private": true,
   "dependencies": {
-    "angular": "~1.4.x"
+    "angular": "~1.5.x",
+    "angular-resource": "1.5.*",
+    "angular-bootstrap": "*",
+    "angular-route": "*",
+    "angular-ui-router": "*"
   }
 }
 

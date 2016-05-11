@@ -1,0 +1,38 @@
+<div class="panel-admin">
+    <div class="title"><span class="left">Teachers</span>
+	<span class="right">
+		<div>
+	    </div>
+	</span></div>
+    <div class="main table-responsive">
+        <table class="table-admin">
+            <thead ng-if="lengthClientsPA !== 0">
+            <th id="emtry"></th>
+            <th translate>First name:</th>
+            <th translate>Last name:</th>
+            <th translate>Subject:</th>
+            <th translate>Last activity:</th>
+           <th id="emtry"></th>
+            <th id="emtry"></th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="teacher in allTeachers.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) ">
+                <td class="image"><img src="dist/images/task.png" /></td>
+                <td>{{teacher.first_name}}</td>
+                <td style="text-align:center;">{{teacher.last_name}} </td>
+                <td style="text-align:center;">{{teacher.subject}}</td>
+                <td style="text-align:center;">{{teacher.last_activity}}</td>
+                <td class="image"><img style="cursor:pointer" ng-click="changeOrCreateTask(teacher.id,true);" id="editImage" src="dist/images/task-edit.png" /></td>
+                <td class="image" style="padding-right:15px"><img style="cursor:pointer" ng-click="clickToTryDelTask(teacher.id)" src="dist/images/trash.png" id="deleteImage" /></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tool">
+	<span class="left">
+		<uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></uib-pagination>
+		<br>
+	</span>
+        <span class="right"><button id="addParticipants" class="btn succes" ng-click="changeOrCreateTask(teacher.id,false);" translate>NEW</button></span>
+    </div>
+</div>
