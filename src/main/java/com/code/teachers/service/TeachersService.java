@@ -5,7 +5,7 @@ import com.code.teachers.domain.Teachers;
 import java.util.Collection;
 
 /**
- * Created by NicholasG on 08.01.2016.
+ * Created by gregory on 08.05.2016.
  */
 public interface TeachersService {
 

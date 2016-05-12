@@ -25,7 +25,7 @@ public class TeachersServiceImpl implements TeachersService {
 
     @Override
     public Teachers findById(Long id) {
-        return null;
+        return repository.findOne(id);
     }
 
     @Override

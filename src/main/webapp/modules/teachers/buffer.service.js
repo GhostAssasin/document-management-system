@@ -31,15 +31,18 @@ app.service('BufferService', function () {
         getTeacherIdDeleted: function () {
           return teacherIdDeleted;
         },
-        getDataForTask: function () {
+        getDataForTeacher: function () {
           return teacher;
         },
-        resetDataForTask: function () {
-          teacher.first_name='';
-          teacher.last_name='';
-          teacher.subject='';
-          teacher.last_activity='';
-          teacher.groups='';
+        resetDataForTeacher: function () {
+            delete (teacher.first_name);
+            delete (teacher.last_name);
+            delete (teacher.subject);
+            delete (teacher.last_activity);
+            delete (teacher.groups);
+            delete (teacher.id);
+            delete (teacher.$$hashKey);
+                return teacher;
         }
 }
 });

@@ -4,24 +4,28 @@
       <table class="table-task">
         <tr>
           <td class="Ttitle" translate>First Name</td>
-          <td><input type="text" ng-model="first_name" required ></td>
+          <td><input type="text" ng-model="first_name" required ng-change="changed.a=true;beenChanges()"></td>
         </tr>
         <tr>
           <td class="Ttitle" translate>Last Name</td>
-          <td><input type="text" ng-model="last_name" required ></td>
+          <td><input type="text" ng-model="last_name" required ng-change="changed.b=true;beenChanges()"></td>
         </tr>
          <tr>
           <td class="Ttitle" translate>Subject</td>
             <td>
-              <select class="form-control" ng-model="subject" name="subject" required">
-                <option value="asd">1</option>
+              <select class="form-control" ng-model="subject" name="subject" required ng-change="changed.c=true;beenChanges()">
+                <option value="asd">1sdfsvd</option>
+                <option value="asddsfsdf">1sdfscvxs</option>
+                <option value="asdsdfsd">sdfsd1</option>
+                <option value="asddsf">sdfs</option>
+
               </select>
             </td>
         </tr>
         <tr>
           <td class="Ttitle" translate>Groups</td>
           <td>
-          <select class="form-control" ng-model="groups" name="technology" required ng-change="changed.c=true;beenChanges()">
+          <select class="form-control" ng-model="groups" name="technology" required ng-change="changed.d=true;beenChanges()">
             <option value="one">1</option>
             <option value="two">2</option>
             <option value="tree">3</option>
@@ -31,7 +35,7 @@
       </table>
     <div/>
   <div class="tool">
-  <button class="btn succes" ng-disabled="whatDo" ng-click="saveTask()">Save Teacher</button>
+  <button class="btn succes" ng-click="saveTask()">Save Teacher</button>
   <div/>
   </div>
 </div>

@@ -41,7 +41,7 @@ public class TeachersController {
     public ResponseEntity<Teachers> getTaskById(@PathVariable Long id) {
         Teachers task = teachersService.findById(id);
         if (task != null) {
-            LOGGER.warn("task id = '" + task.getId() + "' is not found");
+            LOGGER.warn("teacher id = '" + task.getId() + "' is not found");
             return new ResponseEntity<>(task, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -70,7 +70,7 @@ public class TeachersController {
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Teachers> updateTeachers(@RequestBody Teachers teacher) {
         teachersService.save(teacher);
-        LOGGER.info("task id = '" + teacher.getId() + "' has been ");
+        LOGGER.info("teacher id = '" + teacher.getId() + "' has been update");
         return ResponseEntity.ok()
                 .body(teachersService.findById(teacher.getId()));
     }
@@ -78,15 +78,15 @@ public class TeachersController {
     @RequestMapping(value = "/{id}",
             method = RequestMethod.DELETE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteTeacher(@PathVariable Long id) {
         Teachers teacher = teachersService.findById(id);
         if (teacher == null) {
-            LOGGER.warn("task id = '" + id + "' is not found");
+            LOGGER.warn("teacher id = '" + id + "' is not found");
             return ResponseEntity.badRequest()
                     .body(null);
-        } else {
+        } else  {
             teachersService.delete(id);
-            LOGGER.info("task id = '" + id + "' has been deleted");
+            LOGGER.info("teacher id = '" + id + "' has been deleted");
             return ResponseEntity.ok()
                     .build();
         }

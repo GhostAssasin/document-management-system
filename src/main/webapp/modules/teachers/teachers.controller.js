@@ -4,7 +4,7 @@ app.controller('TeachersCtrl',['$scope','$http','TeachersService','$rootScope','
     $scope.visibleMessageDel=false;
     $scope.dateForFilter={};
 
-    for(var l=0; l<=3;l++) {
+    for(var l=0; l<=5;l++) {
       var success = function (response) {
         $scope.allTeachers = response.data;
         $scope.totalItems = response.data.length;
@@ -41,29 +41,42 @@ app.controller('TeachersCtrl',['$scope','$http','TeachersService','$rootScope','
       className:'ngdialog-theme-for-editor',
       template: 'modules/teachers/changeOrCreateTeachers.template.html',
       controller: ['$scope', 'BufferService', function($scope, BufferService) {
-        if(id<0){
-          BufferService.resetDataForTask();
-        }
+
         $scope.whatDo=true;
         $scope.changed={"a":false,"b":false,"c":false,"d":false};
-        $scope.teacher=BufferService.getDataForTask();
-        $scope.first_name=$scope.teacher.first_name;
-        $scope.last_name=$scope.teacher.last_name;
-        $scope.subject=$scope.teacher.subject;
-        $scope.last_activity=$scope.teacher.last_activity;
-        $scope.groups=$scope.teacher.groups;
+        if(id<0){
+          $scope.first_name="";
+          $scope.last_name="";
+          $scope.subject="";
+          $scope.last_activity="";
+          $scope.groups="";
+          $scope.teacher1=BufferService.resetDataForTeacher();
+        } else {
+          $scope.teacher2 = BufferService.getDataForTeacher();
+          $scope.first_name = $scope.teacher2.first_name;
+          $scope.last_name = $scope.teacher2.last_name;
+          $scope.subject = $scope.teacher2.subject;
+          $scope.last_activity = $scope.teacher2.last_activity;
+          $scope.groups = $scope.teacher2.groups;
+        }
+
         $scope.saveTask=function(){
-          $scope.teacher.first_name=$scope.first_name;
-          $scope.teacher.last_name=$scope.last_name;
-          $scope.teacher.subject=$scope.subject;
-          $scope.teacher.last_activity= $scope.last_activity;
-          $scope.teacher.groups=$scope.groups;
           if(save){
-            TeachersCtrlService.Update($scope.teacher);
+            $scope.teacher2.first_name=$scope.first_name;
+            $scope.teacher2.last_name=$scope.last_name;
+            $scope.teacher2.subject=$scope.subject;
+            $scope.teacher2last_activity= $scope.last_activity;
+            $scope.teacher2.groups=$scope.groups;
+            TeachersCtrlService.Update($scope.teacher2);
             refreshTaskList();
           }
           else{
-            TeachersCtrlService.Create($scope.teacher);
+            $scope.teacher1.first_name=$scope.first_name;
+            $scope.teacher1.last_name=$scope.last_name;
+            $scope.teacher1.subject=$scope.subject;
+            $scope.teacher1.last_activity= $scope.last_activity;
+            $scope.teacher1.groups=$scope.groups;
+            TeachersCtrlService.Create($scope.teacher1);
             refreshTaskList();
           }
           $scope.closeThisDialog('');
