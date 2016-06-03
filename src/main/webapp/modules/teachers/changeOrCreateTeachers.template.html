@@ -3,39 +3,101 @@
     <div class="dialog">
       <table class="table-task">
         <tr>
-          <td class="Ttitle" translate>First Name</td>
+          <td class="Ttitle" translate>First Name:</td>
           <td><input type="text" ng-model="first_name" required ng-change="changed.a=true;beenChanges()"></td>
         </tr>
         <tr>
-          <td class="Ttitle" translate>Last Name</td>
+          <td class="Ttitle" translate>Last Name:</td>
           <td><input type="text" ng-model="last_name" required ng-change="changed.b=true;beenChanges()"></td>
         </tr>
-         <tr>
-          <td class="Ttitle" translate>Subject</td>
+        <tr>
+          <td class="Ttitle" translate>Subject:</td>
             <td>
-              <select class="form-control" ng-model="subject" name="subject" required ng-change="changed.c=true;beenChanges()">
-                <option value="asd">1sdfsvd</option>
-                <option value="asddsfsdf">1sdfscvxs</option>
-                <option value="asdsdfsd">sdfsd1</option>
-                <option value="asddsf">sdfs</option>
-
+              <select class="form-control" ng-model="subject[0]" name="subject" ng-change="changed.c=true;beenChanges()">
+                <option ng-repeat="option in allSubjectss" value="{{option.subjects_name}}">{{option.subjects_name}}</option>
               </select>
             </td>
+          <td class="image" style="padding-right:15px"><img style="cursor:pointer" ng-click="addSubject();" src="dist/images/add.png" id="deleteImage" /></td>
         </tr>
-        <tr>
-          <td class="Ttitle" translate>Groups</td>
+        <tr ng-if="compareSub(0)">
+          <td class="Ttitle" translate></td>
           <td>
-          <select class="form-control" ng-model="groups" name="technology" required ng-change="changed.d=true;beenChanges()">
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="tree">3</option>
-          </select>
+            <select class="form-control" ng-model="subject[1]" name="subject" ng-change="changed.c=true;beenChanges()">
+              <option ng-repeat="option in allSubjectss" value="{{option.subjects_name}}">{{option.subjects_name}}</option>
+            </select>
           </td>
         </tr>
+        <tr ng-if="compareSub(1)">
+          <td class="Ttitle" translate></td>
+          <td>
+            <select class="form-control" ng-model="subject[2]" name="subject" ng-change="changed.c=true;beenChanges()">
+              <option ng-repeat="option in allSubjectss" value="{{option.subjects_name}}">{{option.subjects_name}}</option>
+            </select>
+          </td>
+        </tr>
+        <tr ng-if="compareSub(2)">
+          <td class="Ttitle" translate></td>
+          <td>
+            <select class="form-control" ng-model="subject[3]" name="subject" ng-change="changed.c=true;beenChanges()">
+              <option ng-repeat="option in allSubjectss" value="{{option.subjects_name}}">{{option.subjects_name}}</option>
+            </select>
+          </td>
+        </tr>
+        <tr ng-if="compareSub(3)">
+          <td class="Ttitle" translate></td>
+          <td>
+            <select class="form-control" ng-model="subject[4]" name="subject" ng-change="changed.c=true;beenChanges()">
+              <option ng-repeat="option in allSubjectss" value="{{option.subjects_name}}">{{option.subjects_name}}</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="Ttitle" translate>Groups:</td>
+          <td>
+          <select class="form-control" ng-model="groups[0]" name="groups" required ng-change="changed.d=true;beenChanges()">
+            <option ng-repeat="group in allSpecialtyy" value="{{group.specialty_abbreviation}}">{{group.specialty_abbreviation}}</option>
+          </select>
+          </td>
+          <td class="image" style="padding-right:15px"><img style="cursor:pointer" ng-click="addSpecialty();" src="dist/images/add.png" id="deleteImage" /></td>
+        </tr>
+        <tr ng-if="compareSpe(0)">
+          <td class="Ttitle" translate></td>
+          <td>
+            <select class="form-control" ng-model="groups[1]" name="groups" ng-change="changed.d=true;beenChanges()">
+              <option ng-repeat="group in allSpecialtyy" value="{{group.specialty_abbreviation}}">{{group.specialty_abbreviation}}</option>
+            </select>
+          </td>
+        </tr>
+        <tr ng-if="compareSpe(1)">
+          <td class="Ttitle" translate></td>
+          <td>
+            <select class="form-control" ng-model="groups[2]" name="groups" ng-change="changed.d=true;beenChanges()">
+              <option ng-repeat="group in allSpecialtyy" value="{{group.specialty_abbreviation}}">{{group.specialty_abbreviation}}</option>
+            </select>
+          </td>
+        </tr>
+        <tr ng-if="compareSpe(2)">
+          <td class="Ttitle" translate></td>
+          <td>
+            <select class="form-control" ng-model="groups[3]" name="groups" ng-change="changed.d=true;beenChanges()">
+              <option ng-repeat="group in allSpecialtyy" value="{{group.specialty_abbreviation}}">{{group.specialty_abbreviation}}</option>
+            </select>
+          </td>
+        </tr>
+        <tr ng-if="compareSpe(3)">
+          <td class="Ttitle" translate></td>
+          <td>
+            <select class="form-control" ng-model="groups[4]" name="groups" ng-change="changed.d=true;beenChanges()">
+              <option ng-repeat="group in allSpecialtyy" value="{{group.specialty_abbreviation}}">{{group.specialty_abbreviation}}</option>
+            </select>
+          </td>
+        </tr>
+
       </table>
     <div/>
   <div class="tool">
-  <button class="btn succes" ng-click="saveTask()">Save Teacher</button>
+  <button class="btn succes" ng-disabled="whatDo" ng-click="saveTask();">Save Teacher</button>
   <div/>
   </div>
 </div>

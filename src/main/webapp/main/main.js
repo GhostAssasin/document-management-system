@@ -5,15 +5,15 @@ var currentUser;
 app
   .config(['$stateProvider', '$urlRouterProvider','$translateProvider', function ($stateProvider, $urlRouterProvider,$translateProvider,$http) {
 
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/teachers');
 
     $stateProvider
         .state('admin', {
             templateUrl: 'modules/admin/admin.html',
             controller: 'UserController'
         })
-        .state('admin.dashboard', {
-            url: '/dashboard',
+        .state('admin.teachers', {
+            url: '/teachers',
             views: {
                 '': {
                     templateUrl: 'modules/teachers/teachers.html',
@@ -21,29 +21,21 @@ app
                 }
             }
         })
-        .state('admin.users', {
-            url: '/users',
+        .state('admin.specialty', {
+            url: '/specialty',
             views: {
                 '': {
-                    templateUrl: 'modules/dashboard/dashboard.html'
+                    templateUrl: 'modules/specialty/specialty.html',
+                    controller: 'SpecialtyCtrl'
                 }
             }
         })
-        .state('admin.analytics', {
-            url: '/analytics',
+        .state('admin.subjects', {
+            url: '/subjects',
             views: {
                 '': {
-                     templateUrl: 'modules/analytics/analytics.html',
-                     controller: 'AnalyticsCtrl'
-                }
-            }
-        })
-        .state('admin.profile', {
-            url: '/profile/:accId',
-            views: {
-                '': {
-                    templateUrl: 'modules/profile/profile.template.html',
-                    controller: 'ProfileCtrl'
+                    templateUrl: 'modules/subjects/subjects.html',
+                    controller: 'SubjectsCtrl'
                 }
             }
         })

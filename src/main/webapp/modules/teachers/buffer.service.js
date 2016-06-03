@@ -8,7 +8,7 @@ app.service('BufferService', function () {
    return {
        setFirstLastNameForDel: function (allTeachers,id) {
          teacherIdDeleted=id;
-           for(var i=0;i<allTeachers.length;i++){
+           for(var i=0; i<allTeachers.length; i++){
              var obj = allTeachers[i];
              if(id==obj.id){
                firstLastName=obj.first_name + " " + obj.last_name;
@@ -17,7 +17,7 @@ app.service('BufferService', function () {
            }
         },
         setDataForTeacher: function(allTeachers,id){
-          for(var i=0;i<allTeachers.length;i++){
+          for(var i=0; i<allTeachers.length; i++){
             var ob=allTeachers[i];
             if(id==ob.id){
               teacher = allTeachers[i];

@@ -1,0 +1,27 @@
+<div class="panel-admin">
+    <div class="title"><span class="left">Specialty</span>
+	<span class="right">
+		<div>
+	    </div>
+	</span></div>
+    <div class="main table-responsive">
+        <table class="table-admin">
+            <th style="text-align:center;" translate>Specialty:</th>
+            <th style="text-align:center;" translate>Abbreviation:</th>
+           <th id="emtry"></th>
+            <th id="emtry"></th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="specialty in allSpecialty">
+                <td style="text-align:center;">{{specialty.specialty_name}} </td>
+                <td style="text-align:center;">{{specialty.specialty_abbreviation}}</td>
+                <td class="image"><img style="cursor:pointer" ng-click="changeOrCreateSpecialty(specialty.id,true);" id="editImage" src="dist/images/task-edit.png" /></td>
+                <td class="image" style="padding-right:15px"><img style="cursor:pointer" ng-click=" deleteSpecialty(specialty.id)" src="dist/images/trash.png" id="deleteImage" /></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="tool">
+	    <span class="right"><button id="addParticipants" class="btn succes" ng-click="changeOrCreateSpecialty(-1,false)" translate>NEW</button></span>
+    </div>
+</div>

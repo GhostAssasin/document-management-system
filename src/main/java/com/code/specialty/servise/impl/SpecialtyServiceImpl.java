@@ -4,12 +4,14 @@ import com.code.specialty.domain.Specialty;
 import com.code.specialty.repository.SpecialtyRepository;
 import com.code.specialty.servise.SpecialtyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 
 /**
  * Created by gregory on 11.05.16.
  */
+@Component("specialtyService")
 public class SpecialtyServiceImpl implements SpecialtyService {
 
     @Autowired

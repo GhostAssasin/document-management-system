@@ -23,20 +23,20 @@ public class Teachers implements Serializable {
     private String last_name;
 
     @Column(name = "subject")
-    private String subject;
+    private String[] subject=new String[10];
 
     @Column(name = "last_activity")
     private String last_activity;
 
     @Column(name = "groups")
-    private String groups;
+    private String[] groups;
 
 
 
     public Teachers() {
     }
 
-    public Teachers(String first_name, String last_name, String subject, String last_activity, String groups) {
+    public Teachers(String first_name, String last_name, String[] subject, String last_activity, String[] groups) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.subject = subject;
@@ -80,11 +80,11 @@ public class Teachers implements Serializable {
         this.last_name = last_name;
     }
 
-    public String getSubject() {
+    public String[] getSubject() {
         return this.subject;
     }
 
-    public void setSubject(String subject) {
+    public void setSubject(String[] subject) {
         this.subject = subject;
     }
 
@@ -96,11 +96,11 @@ public class Teachers implements Serializable {
         this.last_activity = last_activity;
     }
 
-    public String getGroups() {
+    public String[] getGroups() {
         return groups;
     }
 
-    public void setGroups(String groups) {
+    public void setGroups(String[] groups) {
         this.groups = groups;
     }
 

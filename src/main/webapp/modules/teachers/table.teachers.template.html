@@ -8,20 +8,20 @@
         <table class="table-admin">
             <thead ng-if="lengthClientsPA !== 0">
             <th id="2emtry"></th>
-            <th translate>First name:</th>
-            <th translate>Last name:</th>
-            <th translate>Subject:</th>
-            <th translate>Last activity:</th>
+            <th style="text-align:center;" translate>First name:</th>
+            <th style="text-align:center;" translate>Last name:</th>
+            <th style="text-align:center;" translate>Subject:</th>
+            <th style="text-align:center;" translate>Groups:</th>
            <th id="emtry"></th>
             <th id="emtry"></th>
             </thead>
             <tbody>
             <tr ng-repeat="teacher in allTeachers.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) ">
-                <td class="image"><img src="dist/images/task.png" /></td>
+                <td class="image"><img src="dist/images/u.svg" /></td>
                 <td>{{teacher.first_name}}</td>
                 <td style="text-align:center;">{{teacher.last_name}} </td>
-                <td style="text-align:center;">{{teacher.subject}}</td>
-                <td style="text-align:center;">{{teacher.last_activity}}</td>
+                <td style="text-align:center;">{{teacher.subject[0]}}</td>
+                <td style="text-align:center;">{{teacher.groups[0]}}</td>
                 <td class="image"><img style="cursor:pointer" ng-click="changeOrCreateTask(teacher.id,true);" id="editImage" src="dist/images/task-edit.png" /></td>
                 <td class="image" style="padding-right:15px"><img style="cursor:pointer" ng-click="clickToTryDelTask(teacher.id)" src="dist/images/trash.png" id="deleteImage" /></td>
             </tr>
@@ -33,6 +33,6 @@
 		<uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></uib-pagination>
 		<br>
 	</span>
-        <span class="right"><button id="addParticipants" class="btn succes" ng-click="; changeOrCreateTask(-1,false);" translate>NEW</button></span>
+        <span class="right"><button id="addParticipants" class="btn succes" ng-click="changeOrCreateTask(-1,false);" translate>NEW</button></span>
     </div>
 </div>
